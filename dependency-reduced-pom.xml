@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>se.kth.swim</groupId>
+  <artifactId>swim-project</artifactId>
+  <name>Swim</name>
+  <version>1.0-SNAPSHOT</version>
+  <url>http://maven.apache.org</url>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>2.2</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <transformers>
+                <transformer>
+                  <mainClass>se.kth.swim.simulation.SwimMain</mainClass>
+                </transformer>
+              </transformers>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  <repositories>
+    <repository>
+      <releases />
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>sics-release</id>
+      <name>SICS Release Repository</name>
+      <url>http://kompics.sics.se/maven/repository</url>
+    </repository>
+    <repository>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots />
+      <id>sics-snapshot</id>
+      <name>SICS Snapshot Repository</name>
+      <url>http://kompics.sics.se/maven/snapshotrepository</url>
+    </repository>
+  </repositories>
+  <properties>
+    <simulator.version>1.1-SNAPSHOT</simulator.version>
+    <kompics.version>0.8.0-SNAPSHOT</kompics.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+</project>
+
